@@ -96,7 +96,7 @@ for (fc in ogrListLayers(gdb)){
   cat(sprintf('gdb/fc: %s/%s\n  -> tmp: %s\n  -> geo: %s\n', gdb, fc, tmp, geo))
   
   #skip table stuff
-  if(fc %in% c('Zonaltable')) next()
+  if(fc %in% c('Zonaltable', 'Zonaltable2', 'Zonaltable3', 'Zonaltable4', 'Table_Output')) next()
 
   # read in feature class and project to geographic
   sp = readOGR(gdb, fc) %>%
