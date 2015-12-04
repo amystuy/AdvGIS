@@ -30,14 +30,18 @@ leaflet() %>%
   addTiles() %>%
   addMarkers(data = pts_gcs) 
 ```
+
 ## Add Popup
+
 ```{r}
 # create map with popups
 leaflet() %>%
   addTiles() %>%
   addMarkers(data = pts_gcs, popup=~sprintf('id: %d', id)) 
 ```  
+
 ##Change Basemap
+
 ```{r}
 leaflet() %>%  
   addProviderTiles('Stamen.Watercolor') %>%
@@ -48,7 +52,9 @@ leaflet() %>%
   addProviderTiles('Stamen.Toner') %>%
   addMarkers(data = pts_gcs, popup=~sprintf('id: %d', id))
 ```
+
 ##Add Lines and Polygons
+
 ```{r}
 # read points, lines and polygons from geodatabase
 pts_gcs  = readOGR(gdb, 'pts_tree', verbose=F)    %>% spTransform(leaflet:::epsg4326)
@@ -61,7 +67,9 @@ leaflet() %>%
   #addPolygons(data=plys_gcs) %>%  
   addMarkers(data=pts_gcs, popup=~sprintf('id: %d', id))
 ```
+
 ##Create Raster
+
 ```{r}
 require(raster)
 # set path to your final chosen classified image
@@ -79,7 +87,9 @@ leaflet() %>%
   addRasterImage(r, colors=pal, project=F) %>%
   addLegend(pal=pal, values=values(r), title='Habitats')
 ```
+
 ## Create GeoJSON
+
 ```{r, eval = FALSE, echo = TRUE}
 library(rgdal)
 library(leaflet)
