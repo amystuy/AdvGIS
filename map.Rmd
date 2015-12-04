@@ -9,7 +9,7 @@ output:
 ---
 
 ## Create Map of Points
-
+  
 ```{r}
 # load packages
 suppressWarnings(suppressPackageStartupMessages({
