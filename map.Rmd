@@ -41,7 +41,7 @@ leaflet() %>%
   addMarkers(data = pts_gcs, popup=~sprintf('id: %d', id)) 
 ```  
 
-##Change Basemap
+## Change Basemap
 
 ```{r}
 leaflet() %>%  
@@ -54,7 +54,7 @@ leaflet() %>%
   addMarkers(data = pts_gcs, popup=~sprintf('id: %d', id))
 ```
 
-##Add Lines and Polygons
+## Add Lines and Polygons
 
 ```{r}
 # read points, lines and polygons from geodatabase
@@ -69,7 +69,7 @@ leaflet() %>%
   addMarkers(data=pts_gcs, popup=~sprintf('id: %d', id))
 ```
 
-##Create Raster
+## Create Raster
 
 ```{r}
 require(raster)
